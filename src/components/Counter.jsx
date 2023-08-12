@@ -1,7 +1,8 @@
-import { useState } from "react";
+import Button from "./Button";
 
-const Counter = () => {
-    const [count, setCount] = useState(0);
+/* eslint-disable react/prop-types */
+const Counter = ({ id, increment, decrement, count }) => {
+
     return (
         <div>
             <div
@@ -9,16 +10,8 @@ const Counter = () => {
             >
                 <div className="text-2xl font-semibold">{count}</div>
                 <div className="flex space-x-3">
-                    <button onClick={() => { setCount((prevCount) => prevCount + 1) }}
-                        className="bg-indigo-400 text-white px-3 py-2 rounded shadow"
-                    >
-                        Increment
-                    </button>
-                    <button onClick={() => { setCount((prevCount) => prevCount - 1) }}
-                        className="bg-red-400 text-white px-3 py-2 rounded shadow"
-                    >
-                        Decrement
-                    </button>
+                    <Button handler={() => increment(id)}>Increment</Button>
+                    <Button handler={() => decrement(id)}>Decrement</Button>
                 </div>
             </div>
         </div>
