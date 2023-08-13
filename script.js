@@ -26,12 +26,12 @@ const initialState = {
 
 // create reducer function
 function counterReducer(state = initialState, action) {
-    if (action.type === 'increment') {
+    if (action.type === INCREMENT) {
         return {
             ...state,
             value: state.value + action.payload,
         };
-    } else if (action.type === 'decrement') {
+    } else if (action.type === DECREMENT) {
         return {
             ...state,
             value: state.value - action.payload,
