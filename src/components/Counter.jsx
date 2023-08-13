@@ -1,4 +1,5 @@
 import Button from "./Button";
+import Count from "./Count";
 
 /* eslint-disable react/prop-types */
 const Counter = ({ id, increment, decrement, count }) => {
@@ -8,7 +9,7 @@ const Counter = ({ id, increment, decrement, count }) => {
             <div
                 className="p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-white rounded shadow"
             >
-                <div className="text-2xl font-semibold">{count}</div>
+                <Count count={count} />
                 <div className="flex space-x-3">
                     <Button handler={() => increment(id)}>Increment</Button>
                     <Button handler={() => decrement(id)}>Decrement</Button>
